@@ -11,6 +11,7 @@ namespace WebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //windows的注释！
 			int a = 0;
             int b = a;
         }
