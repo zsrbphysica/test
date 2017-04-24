@@ -12,14 +12,24 @@
     <form id="form1" runat="server">
         
     <div><asp:scriptmanager runat="server"></asp:scriptmanager>
-        
+                            <asp:UpdatePanel ID="UpdatePanel_Score"  runat="server">
+                        <ContentTemplate>
         <asp:Button ID="Button1" runat="server" Text="Button" />
-        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pan1" TargetControlID="Button1" CancelControlID="cancelbutton"></ajaxToolkit:ModalPopupExtender>
+        
         <asp:Panel ID="pan1" style="display:none" runat="server">
             hahah
             <asp:Button ID="cancelbutton" Text="cancel" runat="server" />
         </asp:Panel>
-        <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload1" runat="server" ChunkSize="409600" OnDataBinding="AjaxFileUpload1_DataBinding" OnUploadComplete="AjaxFileUpload1_UploadComplete1" OnUploadCompleteAll="AjaxFileUpload1_UploadCompleteAll" OnUploadStart="AjaxFileUpload1_UploadStart" />
+        <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload1" runat="server" ThrobberID="MyThrobber" ChunkSize="409600" OnDataBinding="AjaxFileUpload1_DataBinding" OnUploadComplete="AjaxFileUpload1_UploadComplete1" OnUploadCompleteAll="AjaxFileUpload1_UploadCompleteAll" OnUploadStart="AjaxFileUpload1_UploadStart" />
+        <asp:Button ID="btnSave" Text="保存" runat="server" OnClick="btnSave_Click" />
+        <asp:HiddenField ID="tbFileName" runat="server" />
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                <asp:Image ID="myThrobber" 
+    runat="server" 
+    ImageUrl="~/Images/throbber.gif"
+     />
+                                                    </ContentTemplate>
+                    </asp:UpdatePanel>
     </div>
     </form>
 </body>
